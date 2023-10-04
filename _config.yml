@@ -104,11 +104,11 @@ analytics:
 
 # Site Author
 author:
-  name             : "ChanHyuk"
+  name             : ""
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : ""
-  location         : "South Korea"
-  email            : "whk1140@gmail.com"
+  location         : ""
+  email            : ""
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
@@ -285,7 +285,7 @@ defaults:
       type: posts
     values:
       layout: single
-      author_profile: true
+      author_profile: false
       read_time: false
       comments: # true
       share: true
