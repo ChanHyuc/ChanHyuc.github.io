@@ -2,6 +2,7 @@
 layout: single
 title: "Algorithm Library"
 categories: C++
+toc: true
 ---
 
 ## Algorithm
