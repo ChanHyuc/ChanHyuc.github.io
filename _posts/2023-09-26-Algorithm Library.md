@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "Algorithm Library"
+categories: C++
 ---
 
 ## Algorithm
