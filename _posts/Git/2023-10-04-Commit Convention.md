@@ -1,5 +1,4 @@
 ---
-layout: single
 title: "Commit Convention"
 categories: Git
 ---
