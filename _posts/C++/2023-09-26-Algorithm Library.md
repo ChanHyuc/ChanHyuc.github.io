@@ -1,9 +1,6 @@
 ---
-layout: single
 title: "Algorithm Library"
 categories: C++
-toc: true
-toc_sticky: true
 ---
 
 ## Algorithm

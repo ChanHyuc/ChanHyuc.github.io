@@ -19,7 +19,6 @@ footer(생략 가능)
 - Refactor: 전체적인 구조 변경 (Fix 보다 수정사항이 큰 경우)
 - Chore: 그 외에 작업들(패키지 매니저 변경, 빌드 수정 등등)
 
-
 - Docs: 문서 수정, README 수정
 - Design: 기능변경없이 UI / UX 수정
 - Rename: 파일 이름 수정하거나 옮기는 경우
