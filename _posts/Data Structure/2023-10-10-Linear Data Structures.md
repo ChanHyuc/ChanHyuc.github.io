@@ -1,10 +1,7 @@
 ---
 title: "Linear Data Structures"
-categories: 자료 구조
+categories: 자료구조
 ---
-
-# Linear Data Structures
-
 ## Contiguous Data Structures(연속된 자료 구조)
 <img width="565" alt="연속된 자료구조" src="https://github.com/ChanHyuc/StudySwift/assets/121753386/9a8c522f-db56-41ee-a26b-789461a67a61">
 - 모든 원소를 단일 메모리 Chunk에 저장함
