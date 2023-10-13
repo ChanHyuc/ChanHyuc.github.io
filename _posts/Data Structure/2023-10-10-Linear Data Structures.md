@@ -1,9 +1,9 @@
 ---
 title: "Linear Data Structures"
-categories: 자료구조
+categories: Data Structures
 ---
 ## Contiguous Data Structures(연속된 자료 구조)
-<img width="565" alt="연속된 자료구조" src="https://github.com/ChanHyuc/StudySwift/assets/121753386/9a8c522f-db56-41ee-a26b-789461a67a61">
+![연속된 자료구조]({{site.url}}/images/ContiguousDataStructures.png)
 - 모든 원소를 단일 메모리 Chunk에 저장함
 - 각각의 원소는 같은 Data Type을 사용하고 같은 크기의 메모리를 사용함
 - 첫번째 원소의 주소를 Base Address(BA)
@@ -21,7 +21,7 @@ int* arr = new int[size];   // C++ 동적 배열 선언
 ```  
 
 ## Linked Data Structures(연결된 자료 구조)
-<img width="747" alt="연결된 자료구조" src="https://github.com/ChanHyuc/StudySwift/assets/121753386/f4ff8e29-29b9-4992-9e9e-588c83bf47f2">
+![연결된 자료구조]({{site.url}}/images/LinkedDataStructures.png)
 - Node라고 하는 여러 개의 메모리 Chunk에 데이터를 저장하며 서로 다른 메모리에 데이터가 저장됨
 - 각각 노드에 저장할 데이터(data)와 다음 노드를 가리키는 포인터(next)를 가짐
 - 맨 마지막 노드는 포인터 대신 자료 구조의 끝을 나타내는 NULL을 가짐
@@ -30,7 +30,7 @@ int* arr = new int[size];   // C++ 동적 배열 선언
 - 배열과 달리 연결리스트는 원소의 삽입과 삭제를 빠르게 수행할 수 있음
 
 ### 연결리스트 새 원소 추가
-<img width="747" alt="연결리스트 새 원소 추가" src="https://github.com/ChanHyuc/StudySwift/assets/121753386/4feb412e-882b-46dd-b373-253c15ddc462">
+![연결 리스트 원소 추가]({{site.url}}/images/LinkedList_add.png)
 1. 새로운 원소를 삽입하기 위해 새로운 노드 생성
 2. 새로 추가한 노드의 next 포인터가(2번째 next) 다음 노드를(3번째 data)를 가리킴
 3. 이전 노드의 next 포인터가(1번째 next) 다음 노드(3번째 data)를 가리켰던것을 제거하고 새로운 노드(2번째 data)를 가르킴

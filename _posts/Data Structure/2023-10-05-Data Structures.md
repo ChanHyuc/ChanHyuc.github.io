@@ -1,6 +1,6 @@
 ---
 title: "Data Structure"
-categories: 자료구조
+categories: Data Structures
 ---
 - 응용 프로그램 설계 시 중요하게 고려해야 할 항목 중 하나는 데이터 관리
 - 입력을 받아 연산하거나 처리한 후 그 결과를 출력하거나 데이터를 보내야 함
