@@ -1,6 +1,6 @@
 ---
 title: "Linear Data Structures"
-categories: Data Structures
+categories: DataStructures
 ---
 ## Contiguous Data Structures(연속된 자료 구조)
 ![연속된 자료구조]({{site.url}}/images/ContiguousDataStructures.png)
@@ -20,6 +20,8 @@ int* arr = (int*)malloc(size * sizeof(int));    // C 동적 배열 선언
 int* arr = new int[size];   // C++ 동적 배열 선언
 ```  
 
+<br />
+
 ## Linked Data Structures(연결된 자료 구조)
 ![연결된 자료구조]({{site.url}}/images/LinkedDataStructures.png)
 - Node라고 하는 여러 개의 메모리 Chunk에 데이터를 저장하며 서로 다른 메모리에 데이터가 저장됨
@@ -29,6 +31,8 @@ int* arr = new int[size];   // C++ 동적 배열 선언
 - 그러므로 원소 접근 시간은 노드 개수에 비례하며 시간 복잡도는 O(n)
 - 배열과 달리 연결리스트는 원소의 삽입과 삭제를 빠르게 수행할 수 있음
 
+<br />
+
 ### 연결리스트 새 원소 추가
 ![연결 리스트 원소 추가]({{site.url}}/images/LinkedList_add.png)
 1. 새로운 원소를 삽입하기 위해 새로운 노드 생성
@@ -37,6 +41,7 @@ int* arr = new int[size];   // C++ 동적 배열 선언
 4. 새로운 노드가 연결 리스트에 추가됨
 - 기존원소의 삭제도 이것과 비슷한 방식으로 진행됨 
 
+<br />
 
 ## 연속된 자료구조 연결된 자료구조 비교
 |연속된 자료구조|연결된 자료구조|
@@ -46,6 +51,7 @@ int* arr = new int[size];   // C++ 동적 배열 선언
 |데이터가 연속적이기 때문에 캐시 지역성 효과로 데이터 순회가 빠름|캐시 지역성이 없으므로 모든 데이터를 순회하는 것이 느린편|
 |데이터 저장을 위해 데이터 크기만큼의 메모리 사용|각 노드에서 포인터 저장을 위해 여분의 메모리 사용|
  
+<br />
 
 ### 배열과 연결리스트 시간 복잡도
 |파라미터|배열|연결 리스트|
@@ -54,3 +60,5 @@ int* arr = new int[size];   // C++ 동적 배열 선언
 |맨 뒤에 원소 삽입|O(1)|O(1)|
 |중간에 원소 삽입|O(n)|O(1)|
 |캐시 지역성|있음|없음|
+
+<br />
