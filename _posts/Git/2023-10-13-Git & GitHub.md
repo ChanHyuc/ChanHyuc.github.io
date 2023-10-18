@@ -16,40 +16,12 @@ categories: Git
     - 필요하다면 특정 시점으로 버전을 되돌림
     - 여러 명이 협업하는 코드를 나누고 합침
 
-버전 vs 패치 vs 업데이트
-
 ## Git
 - 버전 관리를 도와주는 소프트웨어. Version Control System, VCS(버전 관리 시스템)
 - Linus Torvalds가 만든 오픈 소스 프로젝트.
 
 ## GitHub
 - 원격 저장소 호스팅 서비스
-
-
-## Git 명령어
-
-### git
-```bash
-git
-```
-- git이 잘 설치되었는지 확인할 수 있음
-- git과 관련된 목록을 확인할 수 있음
-
-### config
-```bash
-// 값 설정
-git config --global user.name "ChanHyuc"
-git config --global user.email "whk1140@gmail.com"
-
-// 값 확인
-git config user.name    // ChanHyuc
-git config user.email   // whk1140@gmail.com
-
-// 이름과 이메일 외에 다른 설정값을 보여줌
-git config --list
-```
-- git에 이름과 이메일을 설정하거나 설정된 값을 확인 할 수 있음
-
 
 ## 버전 관리하는 세 개의 공간
 
@@ -146,3 +118,5 @@ release
 ![rebase]({{site.url}}/images/rebase_after.png)
 
 - 브랜치가 뻗어나온 기준점을 변경하는 것
+
+버전 vs 패치 vs 업데이트
