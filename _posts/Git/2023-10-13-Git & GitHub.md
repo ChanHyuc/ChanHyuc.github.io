@@ -72,20 +72,6 @@ release
 - 변경 사항이 생기더라도 앞으로 계속 버전에 포함하고 싶지 않는 파일이나 폴더를 설정함
 - .gitignore 파일을 만들고 무시하고 싶은 파일을 명시해서 기술하거나 ex) test.swift 폴더 이름을 기술함 ex) ignore/
 
-
-## revert
-![revert]({{site.url}}/images/revert.png)
-- 커밋한 내용을 되돌리되 되돌아간 상태에 대한 새로운 버전(커밋)을 만드는 방법
-- **기존 버전은 삭제되지 않음**
-
-## reset
-![reset]({{site.url}}/images/reset.png)
-- 커밋한 내용을 되돌리되 되돌아간 시점으로 완전하게 되돌아가는 방법(즉 되돌아갈 버전 이후의 버전은 삭제되는 방식)
-- reset 옵션에는 soft, mixed, hard가 있음
-    - soft: **작업 디렉터리** 변경사항과 **stage**에 추가된 변경 사항은 유지하되 **커밋한것만** 되돌리는 reset
-    - mixed(default): **작업 디렉터리 변경사항만** 유지하고 **stage**와 **커밋**을 되돌리는 reset
-    - hard: **작업 디렉터리**까지 전부 최근 커밋했던 기준으로 되돌리는 reset
-
 ## git stash
 ![stash]({{site.url}}/images/stash_before.png)
 ![stash]({{site.url}}/images/stash_after.png)
