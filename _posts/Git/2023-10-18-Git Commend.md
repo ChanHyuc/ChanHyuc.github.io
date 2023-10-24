@@ -66,10 +66,14 @@ git log
 
 git log --oneline   // 커밋 목록을 짧은 커밋해시, 커밋 메세지 제목만을 출력
 
+git log -- branches // 브랜치 목록을 출력
+
 git log -p      // 해당 커밋으로 어떤 파일이 어떻게 수정됐는지 출력
 git log --patch  // 위와 동일
 
 git log --graph  // 각 커밋을 그래프의 형태로 출력
+
+git log -- oneline -- branches -- graph // 여러개의 옵션을 합쳐서 사용 가능
 ```
 - commit 목록을 출력함
 - commit hash값, 만든 사람, 만들어진 날짜, 커밋메세지가 출력
@@ -176,3 +180,40 @@ git branch --delete <삭제할 브랜치>  // 위와 동일
 
 git merge <병합할 브랜치>  // 브랜치 병합하기, 병합할 브랜치로 이동 후에 사용할 것
 ```
+
+## rebase
+```bash
+git rebase <옮길 브랜치 이름>
+```
+- 브랜치를 재배치함, 브랜치가 뻗어나온 기준점을 옮김
+- 옮기기전의 브랜치로 checkout으로 이동하고 나서 사용해야 함
+
+![rebase]({{site.url}}/images/rebase_before.png)
+![rebase]({{site.url}}/images/rebase_after.png)
+
+## clone
+```bash
+git clone <원격 저장소 경로>  // 현재 경로(local)에 클론
+git clone <원격 저장소 경로> <클론받을 경로>    // 특정 경로에 클론
+```
+- 원격 저장소를 현재 작업하는 컴퓨터로(local) 복사함
+
+## remote
+```bash
+git remote  // 원격 저장소 목록을 출력
+git remote -v   // 원격 저장소의 이름과 경로를 출력
+git remote --verbose    // 위와동일
+
+git remote add <원격 저장소 경로> <원격 저장소 이름> // 로컬 저장소에 원격 저장소를 추가함
+
+git remote rename <기존 원격 저장소 이름> <변경할 원격 저장소 이름>    // 로컬 저장소 이름 변경
+
+git remote remove <삭제할 원격 저장소 이름>   // 로컬 저장소 삭제
+```
+- 원격 저장소를 추가, 변경, 조회, 삭제를 할 수 있음
+
+## push
+```bash
+git push
+```
+- 로컬 저장소의 변경 사항을 원격 저장소에 업데이트 함
