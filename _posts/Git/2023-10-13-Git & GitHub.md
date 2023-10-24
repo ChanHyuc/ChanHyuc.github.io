@@ -72,14 +72,6 @@ release
 - 변경 사항이 생기더라도 앞으로 계속 버전에 포함하고 싶지 않는 파일이나 폴더를 설정함
 - .gitignore 파일을 만들고 무시하고 싶은 파일을 명시해서 기술하거나 ex) test.swift 폴더 이름을 기술함 ex) ignore/
 
-## git stash
-![stash]({{site.url}}/images/stash_before.png)
-![stash]({{site.url}}/images/stash_after.png)
-- 임시 저장 기능 (여러 개를 임시 저장할 수 있음)
-- 사용하게 될 경우 **작업 디렉터리**에서 모든 변경 사항은 임시 저장되고 **작업 디렉터리**는 최근 커밋했던 기준으로 깨끗한 상태로 돌아감
-- stash는 **stage**에 이미 올라와 있거나 한번이라도 **커밋**한적이 있는 파일에만 사용할 수 있음(**tracked**)
-- 즉 방금 막 생성한 파일처럼 추적하지 않는 파일(**untracked**)은 사용할 수 없음
-
 ## branch
 - 버전을 여러 흐름으로 나누어 관리함
     - 브랜치를 나눔

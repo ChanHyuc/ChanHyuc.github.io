@@ -8,13 +8,16 @@ categories: Git
 git
 ```
 - git이 잘 설치되었는지 확인할 수 있음
-- git과 관련된 목록을 확인할 수 있음
+- git과 관련된 commend을 확인할 수 있음
 
 ## init
 ```bash
 git init
+Initialized empty Git repository in Desktop/test/.git/
 ```
 - git 저장소를 만드는 명령 Local에 깃 저장소를 만들 수 있음
+- Initialized empty Git repository in <경로> 메세지가 나올 경우 성공한것
+- 해당 경로에 .git 폴더가 만들어짐
 
 ## config
 ```bash
@@ -116,17 +119,60 @@ git diff <기준이 되는 브랜치> <기준과 비교할 브랜치>
 - 커밋해쉬값 대신 HEAD^(HEAD~1), HEAD^^^(HEAD~3)을 사용해도 됨
 
 ## revert
+```bash
+git revert <취소할 커밋>
+```
 ![revert]({{site.url}}/images/revert.png)
 - 커밋한 내용을 되돌리되 되돌아간 상태에 대한 새로운 버전(커밋)을 만드는 방법
+- revert를 사용하면 git commit를 사용 한것처럼 Vim 창이 나타남
+- revert는 기존의 커밋을 취소하고 새로운 커밋을 만드는 명령이기 때문에 커밋 메세지를 작성해야 함
 - **기존 버전은 삭제되지 않음**
 
 ## reset
+```bash
+git reset --옵션 <되돌아갈 커밋해쉬값>
+```
 ![reset]({{site.url}}/images/reset.png)
 - 커밋한 내용을 되돌리되 되돌아간 시점으로 완전하게 되돌아가는 방법(즉 되돌아갈 버전 이후의 버전은 삭제되는 방식)
 
 ### reset 옵션
+![reset]({{site.url}}/images/reset_option.png)
 |옵션|내용|
 |---|---|
 |soft|**작업 디렉터리** 변경사항과 **stage**에 추가된 변경 사항은 유지하되 **커밋한것만** 되돌리는 reset|
 |mixed(default)|**작업 디렉터리 변경사항만** 유지하고 **stage**와 **커밋**을 되돌리는 reset|
 |hard|**작업 디렉터리**까지 전부 최근 커밋했던 기준으로 되돌리는 reset|
+
+## stash
+```bash
+git stash
+git stash -m "메시지 내용"
+
+git stash list  // 임시 저장된 작업 내역 조회, 최근에 저장된 작업일 수록 숫자가 작음
+
+git stash apply <stash@{번호}>
+
+git stash drop <stash@{번호}>
+```
+
+![stash]({{site.url}}/images/stash_before.png)
+![stash]({{site.url}}/images/stash_after.png)
+- 임시 저장 기능 (여러 개를 임시 저장할 수 있음)
+- 사용하게 될 경우 **작업 디렉터리**에서 모든 변경 사항은 임시 저장되고 **작업 디렉터리**는 최근 커밋했던 기준으로 깨끗한 상태로 돌아감
+- stash는 **stage**에 이미 올라와 있거나 한번이라도 **커밋**한적이 있는 파일에만 사용할 수 있음(**tracked**)
+- 즉 방금 막 생성한 파일처럼 추적하지 않는 파일(**untracked**)은 사용할 수 없음
+
+## branch
+```bash
+git branch  // 현재 브랜치의 목록과 작업 중인 브랜치가 *로 표시
+
+git branch <생성할 브랜치> // 브랜치 생성
+git branch -b <생성할 브랜치>  // 브랜치를 생성하고 생성한 브랜치로 이동
+
+git checkout <이동할 브랜치>   // 브랜치 이동
+
+git branch -d <삭제할 브랜치>  // 브랜치 삭제, 삭제할 브랜치에서 사용할 수 없음, 다른 브랜치로 이동해서 삭제해야함
+git branch --delete <삭제할 브랜치>  // 위와 동일
+
+git merge <병합할 브랜치>  // 브랜치 병합하기, 병합할 브랜치로 이동 후에 사용할 것
+```
