@@ -12,7 +12,8 @@ categories: DataStructures
 
 ## Hierarchical Problem(계층적 문제)
 ![계층적 문제]({{site.url}}/images/Hierarchical_Problem.png)
-- 대학의 일부 과정의 종속 관계를 나타낸 표
+![계층적 문제]({{site.url}}/images/Hierarchical_Problem2.png)
+- 실생활에서 자주 볼 수 있는 유형인 회사의 조직도와 대학교 교과과정 계층도
 - 컴퓨터 과학개론을 수강하려면 **운영체제**와 **이산수학**을 이수해야 함
 - 마찬가지로 다른 과목에 대해서도 미리 선수강해야 하는 과목을 확인할 수 있음
 - 이러한 구성은 계층적으로 표현되어서 배열, 벡터, 연결 리스트 같은 자료 구조로는 표현하기 어려움
@@ -20,4 +21,13 @@ categories: DataStructures
 - 데이터가 저장된 부분을 node, 노드와 노드 사이를 잇는 선을 edge
 
 ## Cyclic Dependency(순환 종속성)
+![계층적 문제]({{site.url}}/images/Cyclic Dependency.png)
+- 친구 관계를 나타내는 그림, 이러한 구조를 Graph(그래프)라고 함
+- 사람 이름(원소)이 node에 해당하고 사람들 사이의 관계를 edge로 표현됨
+- 이 그림에서는 앤드류와 니콜, 그렉과 친구사이고, 다시 니콜과 그렉도 친구임을 알 수 있음 (앤드류 니콜 그렉은 모두 친구사이)
+- 앤드류는 태너와 한 다리 건너서 친구이고, 니콜과 그렉은 두 명을 거쳐야 태너와 아는 사이가 됨
 
+
+## tree(트리)
+- node와 node 사이를 연결하는 edge를 이용하여 계층을 구성함
+- 트리의 중심이 되는 노드를 root node(루트 노드)라고 하고 보통 가장 맨 위에 나타냄
