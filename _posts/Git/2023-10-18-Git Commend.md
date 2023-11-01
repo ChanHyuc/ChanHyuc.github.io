@@ -217,3 +217,51 @@ git remote remove <삭제할 원격 저장소 이름>   // 로컬 저장소 삭�
 git push
 ```
 - 로컬 저장소의 변경 사항을 원격 저장소에 업데이트 함
+
+
+git branch -M main
+git branch -M <브랜치 이름>
+- 현재 브랜치 이름을 <브랜치 이름>으로 바꾸는 명령어 즉 이 명령은 현재 브랜치(master) 이름을 main으로 변경함
+- 브랜치 이름을 바꾸는 경우는 비교적 드뭄
+- 깃허브에서는 기본 브랜치 이름을 master 브랜치가 아닌 main 브랜치로 지칭함
+- 로컬 저장소의 기본 브랜치는 master임
+
+git push -u origin main
+git push <원격 저장소 이름> <브랜치 이름>
+- 원격저장소 origin으로 로컬 저장소 main 브랜치의 변경 사항을 푸쉬함
+- -u 옵션은 처음 푸쉬할 때 한 번만 사용 추후 간단히 git push, git pull 명령만으로 origin의 main 브랜치로 푸시 풀 할 수 있음
+
+## fetch
+- 원격 저장소의 변경 사항을 로컬 저장소에 병합하지 않고 **일단 가져만 오는 방법**
+- fetch는 원격 저장소의 변경 사항을 origin/main 브랜치로 가져올 뿐 main 브랜치는 변함이 없기 때문 즉 로컬 저장소의 브랜치로 병합하지 않음
+- 순서
+- git checkout origin main
+- git checkout FETCH_HEAD   // 위와 동일
+- git checkout main
+- git merge origin/main
+
+![fetch]({{site.url}}/images/fetch_before.png)
+![fetch]({{site.url}}/images/fetch_after.png)
+![fetch]({{site.url}}/images/merge_after.png)
+
+
+## pull
+- 원격 저장소를 가져와서 합침
+- fetch와 merge를 동시에 하는 방식
+
+## pull request
+- pull request를 통해 협업하는 과정
+1. 기여하려는 저장소를 본인 계정으로 포크하기
+2. 포크한 저장소를 클론하기
+3. 브랜치 생성 후 생성한 브랜치에서 작업하기
+4. 작업한 브랜치 푸시하기
+5. pull request 보내기
+
+- ssh 공개키 개인키
+- 원격저장소의 주인이 Collaborator로 추가한 경우 저장소의 주인이 아니여도 push할 권한이 생김
+- 하지만 대부분 직접 푸쉬할 권한이 없는 상태에서 pull request로 협업함
+- pull request는 말 그대로 원격저장소가 내가 변경한 사항을 pull 하도록 요청(request) 하는 것
+
+
+## Reference
+[모두의 깃&깃허브]()
