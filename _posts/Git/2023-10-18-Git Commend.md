@@ -21,9 +21,13 @@ Initialized empty Git repository in Desktop/test/.git/
 
 ## config
 ```bash
-// 값 설정
+// 값 설정 (전역)
 git config --global user.name "설정하고 싶은 이름"
 git config --global user.email "설정하고 싶은 이메일"
+
+// 값 설정 (지역)
+git config --local user.name "설정하고 싶은 이름"
+git config --local user.email "설정하고 싶은 이메일"
 
 // 값 확인
 git config user.name   
@@ -32,7 +36,7 @@ git config user.email
 // 이름과 이메일 외에 다른 설정값을 보여줌
 git config --list
 ```
-- git에 이름과 이메일을 설정하거나 설정된 값을 확인 할 수 있음
+- git의 사용자이름과 사용자메일을 설정하거나 설정된 값을 확인 할 수 있음
 
 ## status
 ```bash
@@ -46,6 +50,19 @@ git add 스테이지에 추가할 대상
 git add .   // 현재 디렉터리에 있는 모든 변경 사항을 스테이지에 추가
 ```
 - 스테이지에 올리기
+
+## git rm
+- Local에서 폴더나 파일을 삭제를 하면 push를 할 시 GitHub는 그대로 유지됨 
+- Local에서 삭제 한다고 remote에서 삭제가 이루어지지 않는다.
+- 즉 제거했다는 내역 자체를 커밋해야함
+```bash
+git rm <fileName> // 원격 저장소와 로컬 저장소에 있는 파일 삭제
+git rm —cached <fileName> // 원격저장소에 있는 파일만 삭제
+git rm <file> // 하나씩 제거
+git add -u // 전부제거
+// 그 다음 commit과 push를 하면 된다.
+```
+- cached 옵션은 작업시에만 쓰는 파일이나 로그는 작업할 때 필요하지만 저장소에는 올리지 않아될 때 주로 사용한다.
 
 ## commit
 ```bash
@@ -125,12 +142,15 @@ git diff <기준이 되는 브랜치> <기준과 비교할 브랜치>
 ## revert
 ```bash
 git revert <취소할 커밋>
+// revert 과정에서 오류가 발생 시 직접 conflict를 수정해야함
+git revert —continue    // 계속 진행
+git rever — abort    // 취소
 ```
 ![revert]({{site.url}}/images/revert.png)
 - 커밋한 내용을 되돌리되 되돌아간 상태에 대한 새로운 버전(커밋)을 만드는 방법
 - revert를 사용하면 git commit를 사용 한것처럼 Vim 창이 나타남
 - revert는 기존의 커밋을 취소하고 새로운 커밋을 만드는 명령이기 때문에 커밋 메세지를 작성해야 함
-- **기존 버전은 삭제되지 않음**
+- **기존 버전은 삭제되지 않음** 흔적이 남게되서 협업할 때 사용
 
 ## reset
 ```bash
@@ -180,6 +200,23 @@ git branch --delete <삭제할 브랜치>  // 위와 동일
 
 git merge <병합할 브랜치>  // 브랜치 병합하기, 병합할 브랜치로 이동 후에 사용할 것
 ```
+- 버전을 여러 흐름으로 나누어 관리함
+    - 브랜치를 나눔
+    - 각각의 브랜치에서 작업함
+    - 필요한 경우 나눈 브랜치를 합침
+- Git은 최초의 브랜치 master를 default로 사용, GitHub는 main을 default로 사용
+- HEAD는 현재 작업 중인 브랜치의 **최신 커밋**을 가리킴
+- 브랜치를 나누고 합치는 과정에서 HEAD의 위치를 자유롭게 바꿀 수 있음
+- checkout하게 되면 HEAD의 위치가 해당 브랜치의 최신 커밋을 가리키고 **작업 디렉터리**는 체크아웃한 브랜치의 환경으로 바뀌게 됨
+- 브랜치를 하나로 병합하는 것을 merge
+- 빨리 감기 병합(fast-forward merge)
+- 충돌: 병합하려는 두 브랜치가 **서로 같은 내용을 다르게 수정한 상황**
+- 충돌은 여러명이 협업할 경우 빈번하게 발생하고 발생하면 브랜치가 병합되지 못함
+- 그래서 왜 발생하고 어떻게 해결할 수 있는지 알아야 함
+- 충돌이 발생한 파일들은 충돌을 해결한 뒤 다시 커밋해야 브랜치가 병합됨
+- 충돌을 해결한다: 같은 내용을 다르게 수정한 브랜치 중 어떤 브랜치를 반영할 것인지 선택함
+- 충돌이 발생한 파일에는 <<<<<, >>>>>, ===== 기호가 표기 됨
+- <<<<<와 ===== 기호 사이의 내용을 선택할지 =====와 >>>>> 기호 사이의 내용을 선택할지 골라야 함
 
 ## rebase
 ```bash
