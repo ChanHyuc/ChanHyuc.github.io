@@ -299,6 +299,9 @@ git push <원격 저장소 이름> <브랜치 이름>
 - 하지만 대부분 직접 푸쉬할 권한이 없는 상태에서 pull request로 협업함
 - pull request는 말 그대로 원격저장소가 내가 변경한 사항을 pull 하도록 요청(request) 하는 것
 
+## quotepath
+git config core.quotepath false // 한글 파일명이 깨져서 보일 때
+[core.quotepath](https://git-scm.com/docs/git-config#Documentation/git-config.txt-corequotePath)
 
 ## Reference
 [모두의 깃&깃허브]()
