@@ -160,7 +160,7 @@ AD(₁₆)
 ## low-level Programming language(저급언어)
 - 컴퓨터가 직접 이해하고 실행할 수 있는 언어
 - 기계어와 어셈블리어가 있음
-- 하드웨어와 밀접하게 맞닿은 프로그램을 개발하는 임베디드 개발자, 게임 개발자, 정보보안 개발자 등에서 어셈블리어를 많이 사용
+- 하드웨어와 밀접하게 맞닿은 프로그램을 개발하는 임베디드 개발자, 게임 개발자, 보안 솔루션 개발자, 시스템 해커 등에서 어셈블리어를 많이 사용
 - 어셈블리어를 읽으면 컴퓨터가 프로그램을 어떤 과정으로 실행하는지 어떤 절차로 작동하는지 근본적인 단계부터 추적하고 관찰할 수 있음
 - 어셈블리어는 CPU마다 컴파일러의 종류마다 다를 수 있음
 
@@ -213,25 +213,30 @@ AD(₁₆)
 - 하지만 operand field 안에 정보가 아닌 메모리 주소가 담긴다면 표현할 수 있는 데이터 크기는 메모리 주소에 저장할 수 있는 공간만큼 커짐
 
 ### immediate addressing mode(즉시 주소 지정 방식)
+![]({{site.url}}/images/immediateAddressingMode.png)
 - 연산에 사용할 데이터를 operand field에 직접 명시함
 - 가장 간단한 지정 방식이며 표현할 수 있는 데이터 크기가 작음
 - 하지만 연산에 사용할 메모리나 레지스터로 부터 찾는 과정이 없기 때문에 빠름
 
 ### direct addressing mode(직접 주소 지정 방식)
+![]({{site.url}}/images/directAddressingMode.png)
 - operand field에 유효 주소를 직접적으로 명시하는 방법
 - 즉시 주소 방식보다는 데이터 크기가 커졌지만 여전히 operand field 길이 만큼 유효 주소에 제한이 생길 수 있음
 
 ### indirect addressing mode(간접 주소 지정 방식)
+![]({{site.url}}/images/indirectAddressingMode.png)
 - 유효의 주소의 주소를 operand field에 명시
 - 유효 주소의 범위가 넓어짐
 - 하지만 두 번의 메모리 접근이 필요하기 때문에 느린 방식
 - **CPU가 Memory에서 값을 찾는 시간은 상대적으로 오래 걸림, 때문에 메모리 접근을 최소화 하는것이 좋음** 
 
 ### register addressing mode(레지스터 주소 지정 방식)
+![]({{site.url}}/images/registerAddressingMode.png)
 - 직접 주소 지정 방식과 비슷함. 데이터를 저장한 레지스터를 operand field에 직접 명시
 - CPU 외부에 있는 메모리에 접근하는것 보다 내부에 있는 레지스터에 접근하는것이 빠름 
 
 ### register indirect addressing mode(레지스터 간접 주소 지정 방식)
+![]({{site.url}}/images/registerIndirectAddressingMode.png)
 - 연산에 사용할 데이터를 메모리에 저장하고 메모리의 유효 주소를 레지스터에 저장한 다음 그 레지스터를 operand field에 명시
 - 간접 주소 지정 방식과 비슷하지만 메모리의 접근 횟수가 한 번으로 줄어드는 장점이 있음
 
@@ -271,6 +276,12 @@ AD(₁₆)
 4. 시스템 버스 그 중에서 제어 버스로 전달된 제어 신호를 받아들임
 - 제어 신호는 CPU뿐만 아니라 입출력장치나 CPU 외부 장치에서도 발생할 수 있음
 - 그래서 제어 장치는 제어 버스를 이용해 외부로부터 전달된 제어 신호를 받아 들임
+
+# 10강
+- ALU와 제어장치는 프로그래머가 직접 관리할 일은 적음
+- 레지스터를 관찰하는 일은 생각보다 많음(low-level 개발자 한정)
+- 레지스터의 종류나 갯수는 심지어 똑같은 용도의 레지스터도 CPU마다 다름
+- 그럼에도 대부분의 CPU에서 공통적으로 사용하는 8가지의 레지스터가 있음
 
 ## Reference
 [혼자 공부하는 컴퓨터구조]()
