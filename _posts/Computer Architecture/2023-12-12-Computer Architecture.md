@@ -1,6 +1,6 @@
 ---
 title: "Computer Architecture"
-categories: Computer Architecture
+categories: ComputerArchitecture
 ---
 # 1강
 ## Computer Architecture(컴퓨터 구조)
