@@ -1,6 +1,6 @@
 ---
 title: "Main Memory 구조"
-categories: Computer_Science
+categories: ComputerScience
 ---
 
 **1. Code(Program)**
