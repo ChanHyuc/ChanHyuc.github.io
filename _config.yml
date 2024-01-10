@@ -200,7 +200,7 @@ incremental: false
 
 # Markdown Processing
 kramdown:
-  input: MultiMarkdown
+  input: GFM
   hard_wrap: false
   auto_ids: true
   footnote_nr: 1
