@@ -10,6 +10,7 @@ categories: C++
 - 노드 기반으로 된 Red-Black Tree(균형이진트리)
 - key, value로 이루어져 있으며 pair 객체로 저장
 - 삽입이 되면 자동으로 정렬 됨
+
 ```cpp
 #include<map>
 
