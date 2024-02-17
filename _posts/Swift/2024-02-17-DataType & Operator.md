@@ -110,12 +110,22 @@ func test(value: funcIS){
 ### 연산자 종류
 1. Unary Operator(단항 연산자) // +A, !A
 2. Binary Operator(이항 연산자) // A + B
-3. Ternary Operator(삼항 연산자) // let result = score >= 70? "Pass" : "Fail"
+3. Ternary Operator(삼항 연산자) // let adult = age >= 19 ? "Adult" : "Kid"
 4. Assignment Operator(할당 연산자) // A = B + C
 5. Arithmetic Operator(산술 연산자) // + - * / %  **(같은 타입끼리만 산술연산 가능!)**
 6. Compound Assignment Operator(복합 할당 연산자) // A = A + 5, A += 5 (A값에 5를 더함)
 7. Comparison Operator(비교 연산자) // = > <
 8. Logical Operator(논리 연산자) // ! && \|\|
+9. Closed Range Operator(범위 연산자)    // 1...5, ...5
+- 내림차순으로 표기 불가능, reversed()를 사용해서 내림차순으로 가능.
+10. Pattern Matching Operator(패턴 매칭 연산자)
+- 숫자가 범위내에 있는지 확인하는 연산자
+- 결과 값은 true / false
+
+```swift
+let kid = 1...18
+kid ~= 17    // true
+```
 
 ### Explicit Member Expression(명시적 멤버 표현식, 접근 연산자)
 - DataType이나 Tuple, 또는 모듈의 멤버에 대한 접근을 함, 자신의 멤버 식별자 사이의 마침표 . 으로 구성됨
