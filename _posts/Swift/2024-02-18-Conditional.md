@@ -54,7 +54,7 @@ func check(id: String, password: String) -> String{
 - if문보다 가독성이 좋으나 한정적으로 사용가능. 분기처리에 많이 사용함
 - 비교하는 변수타입과 case에 타입 종류는 같아야 함
 - 실행하려는 코드가 없어도 **break 키워드를 반드시 입력!**
-- fallthrough 키워드: 바로 뒤에 문장을 조건 상관없이 무조건 실행
+- fallthrough 키워드(제어전송문): 바로 뒤에 문장을 조건 상관없이 무조건 실행
 - 변수의 모든 경우의 수를 switch에 명시한 경우 default문은 사용하지 않아도 됨
 
 ```swift
