@@ -55,6 +55,7 @@ git add .   // 현재 디렉터리에 있는 모든 변경 사항을 스테이�
 - Local에서 폴더나 파일을 삭제를 하면 push를 할 시 GitHub는 그대로 유지됨 
 - Local에서 삭제 한다고 remote에서 삭제가 이루어지지 않는다.
 - 즉 제거했다는 내역 자체를 커밋해야함
+
 ```bash
 git rm <fileName> // 원격 저장소와 로컬 저장소에 있는 파일 삭제
 git rm —cached <fileName> // 원격저장소에 있는 파일만 삭제
@@ -97,7 +98,7 @@ git log -- oneline -- branches -- graph // 여러개의 옵션을 합쳐서 사�
 - commit 해시에 HEAD -> master는 현재 HEAD가 master 브랜치에 있음을 나타냄
 
 ### branches
-![]({{site.url}}/images/git_log_branches.png)
+![]({{site.url}}/images/Git/git_log_branches.png)
 - master 브랜치의 Third Commit에서 git log를 했을 시 master 브랜치에 속해 있는 First, Second, Third 커밋 목록만 조회함
 - serve 브랜치의 Fifth Commit에서 git log를 했을 시 master 브랜치와 serve 브랜치에 있는 모든 커밋 목록을 조회함
 - 즉 git log 명령은 현재 브랜치를 기준으로 커밋 목록을 조회하기 때문에 git log 만으로는 자신의 브랜치에 속하지 않는 커밋은 볼 수 없음 
@@ -146,7 +147,7 @@ git revert <취소할 커밋>
 git revert —continue    // 계속 진행
 git rever — abort    // 취소
 ```
-![revert]({{site.url}}/images/revert.png)
+![revert]({{site.url}}/images/Git/revert.png)
 - 커밋한 내용을 되돌리되 되돌아간 상태에 대한 새로운 버전(커밋)을 만드는 방법
 - revert를 사용하면 git commit를 사용 한것처럼 Vim 창이 나타남
 - revert는 기존의 커밋을 취소하고 새로운 커밋을 만드는 명령이기 때문에 커밋 메세지를 작성해야 함
@@ -156,15 +157,16 @@ git rever — abort    // 취소
 ```bash
 git reset --옵션 <되돌아갈 커밋해쉬값>
 ```
-![reset]({{site.url}}/images/reset.png)
+![reset]({{site.url}}/images/Git/reset.png)
 - 커밋한 내용을 되돌리되 되돌아간 시점으로 완전하게 되돌아가는 방법(즉 되돌아갈 버전 이후의 버전은 삭제되는 방식)
 
 ### reset 옵션
-![reset]({{site.url}}/images/reset_option.png)
+![reset]({{site.url}}/images/Git/reset_option.png)
+
 |옵션|내용|
 |---|---|
-|soft|**작업 디렉터리** 변경사항과 **stage**에 추가된 변경 사항은 유지하되 **커밋한것만** 되돌리는 reset|
-|mixed(default)|**작업 디렉터리 변경사항만** 유지하고 **stage**와 **커밋**을 되돌리는 reset|
+|soft|**작업 디렉터리** 변경사항과 stage에 추가된 변경 사항은 유지하되 **커밋한것만(git commit)** 되돌리는 reset|
+|mixed(default)|**작업 디렉터리 변경사항만** 유지하고 **stage(git add)**와 **커밋(git commit)**을 되돌리는 reset|
 |hard|**작업 디렉터리**까지 전부 최근 커밋했던 기준으로 되돌리는 reset|
 
 ## stash
@@ -179,8 +181,8 @@ git stash apply <stash@{번호}>
 git stash drop <stash@{번호}>
 ```
 
-![stash]({{site.url}}/images/stash_before.png)
-![stash]({{site.url}}/images/stash_after.png)
+![stash]({{site.url}}/images/Git/stash_before.png)
+![stash]({{site.url}}/images/Git/stash_after.png)
 - 임시 저장 기능 (여러 개를 임시 저장할 수 있음)
 - 사용하게 될 경우 **작업 디렉터리**에서 모든 변경 사항은 임시 저장되고 **작업 디렉터리**는 최근 커밋했던 기준으로 깨끗한 상태로 돌아감
 - stash는 **stage**에 이미 올라와 있거나 한번이라도 **커밋**한적이 있는 파일에만 사용할 수 있음(**tracked**)
@@ -225,8 +227,8 @@ git rebase <옮길 브랜치 이름>
 - 브랜치를 재배치함, 브랜치가 뻗어나온 기준점을 옮김
 - 옮기기전의 브랜치로 checkout으로 이동하고 나서 사용해야 함
 
-![rebase]({{site.url}}/images/rebase_before.png)
-![rebase]({{site.url}}/images/rebase_after.png)
+![rebase]({{site.url}}/images/Git/rebase_before.png)
+![rebase]({{site.url}}/images/Git/rebase_after.png)
 
 ## clone
 ```bash
@@ -255,31 +257,28 @@ git push
 ```
 - 로컬 저장소의 변경 사항을 원격 저장소에 업데이트 함
 
-
-git branch -M main
-git branch -M <브랜치 이름>
-- 현재 브랜치 이름을 <브랜치 이름>으로 바꾸는 명령어 즉 이 명령은 현재 브랜치(master) 이름을 main으로 변경함
-- 브랜치 이름을 바꾸는 경우는 비교적 드뭄
-- 깃허브에서는 기본 브랜치 이름을 master 브랜치가 아닌 main 브랜치로 지칭함
-- 로컬 저장소의 기본 브랜치는 master임
-
+```bash
 git push -u origin main
 git push <원격 저장소 이름> <브랜치 이름>
+```
 - 원격저장소 origin으로 로컬 저장소 main 브랜치의 변경 사항을 푸쉬함
 - -u 옵션은 처음 푸쉬할 때 한 번만 사용 추후 간단히 git push, git pull 명령만으로 origin의 main 브랜치로 푸시 풀 할 수 있음
 
 ## fetch
 - 원격 저장소의 변경 사항을 로컬 저장소에 병합하지 않고 **일단 가져만 오는 방법**
 - fetch는 원격 저장소의 변경 사항을 origin/main 브랜치로 가져올 뿐 main 브랜치는 변함이 없기 때문 즉 로컬 저장소의 브랜치로 병합하지 않음
-- 순서
-- git checkout origin main
-- git checkout FETCH_HEAD   // 위와 동일
-- git checkout main
-- git merge origin/main
 
-![fetch]({{site.url}}/images/fetch_before.png)
-![fetch]({{site.url}}/images/fetch_after.png)
-![fetch]({{site.url}}/images/merge_after.png)
+```bash
+    //순서
+git checkout origin main
+git checkout FETCH_HEAD   // 위와 동일
+git checkout main
+git merge origin/main
+```
+
+![fetch]({{site.url}}/images/Git/fetch_before.png)
+![fetch]({{site.url}}/images/Git/fetch_after.png)
+![fetch]({{site.url}}/images/Git/merge_after.png)
 
 
 ## pull
@@ -294,13 +293,14 @@ git push <원격 저장소 이름> <브랜치 이름>
 4. 작업한 브랜치 푸시하기
 5. pull request 보내기
 
-- ssh 공개키 개인키
 - 원격저장소의 주인이 Collaborator로 추가한 경우 저장소의 주인이 아니여도 push할 권한이 생김
 - 하지만 대부분 직접 푸쉬할 권한이 없는 상태에서 pull request로 협업함
 - pull request는 말 그대로 원격저장소가 내가 변경한 사항을 pull 하도록 요청(request) 하는 것
 
 ## quotepath
+```bash
 git config core.quotepath false // 한글 파일명이 깨져서 보일 때
+```
 [core.quotepath](https://git-scm.com/docs/git-config#Documentation/git-config.txt-corequotePath)
 
 ## Reference
