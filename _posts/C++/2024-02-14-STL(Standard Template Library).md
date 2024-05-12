@@ -3,13 +3,16 @@ title: "STL(Standard Template Library)"
 categories: C++
 ---
 ## Define
+- 표준으로 인증받은 라이브러리 모음집
 - 자료구조, 함수, 알고리즘 등을 사용하기 쉽게 정형화한 라이브러리
-- 컨테이너, 알고리즘, 함수자, 반복자 4가지로 구성
+- STL 3가지 요소
+    - Containers
+    - Altorithm: Container에서 실행되는 알고리즘
+    - Iterator(반복자): Container와 Algorithm을 연결해 줌
 
 ## map
-- 노드 기반으로 된 Red-Black Tree(균형이진트리)
-- key, value로 이루어져 있으며 pair 객체로 저장
-- 삽입이 되면 자동으로 정렬 됨
+
+
 
 ```cpp
 #include<map>
